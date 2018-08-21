@@ -7,12 +7,14 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 
-export interface State {
+import * as fromCounter from './counter.reducer';
 
+export interface State {
+  counter: fromCounter.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
-
+  counter: fromCounter.reducer
 };
 
 
