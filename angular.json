@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "ngrx-ducks-demo"
+  "defaultProject": "ngrx-ducks-demo",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
