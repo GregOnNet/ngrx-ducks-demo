@@ -6,7 +6,6 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import * as fromCounter from './reducers/counter.reducer';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import * as fromCounter from './reducers/counter.reducer';
   imports: [
     BrowserModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreModule.forFeature('counter', fromCounter.reducer)
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]
