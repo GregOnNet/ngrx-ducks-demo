@@ -5,7 +5,7 @@ import { ducks } from './counter.reducer';
 
 @Injectable({ providedIn: 'root' })
 export class CounterActions {
-  static readonly LoadAll = 'Counter Load All';
+  readonly LoadAll = 'Counter Load All';
 
   counter = this.dispatchers.create(ducks);
 

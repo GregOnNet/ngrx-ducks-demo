@@ -1,7 +1,7 @@
 import { Ducks, DucksAction } from './contracts';
 
 export function createReducer<TSlice, TPayload>(
-  ducks: Ducks<TSlice, TPayload>
+  ducks: Ducks<TSlice>
 ) {
   const reducerFns = Object.values(ducks).reduce(
     (functions, duck) => ({

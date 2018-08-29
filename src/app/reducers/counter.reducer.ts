@@ -8,7 +8,8 @@ export interface State {
 
 export const ducks = {
   increment: createDuck('[Counter] Increment', increment),
-  decrement: createDuck('[Counter] Decrement', decrement)
+  decrement: createDuck('[Counter] Decrement', decrement),
+  setTo5: createDuck('[Counter] Set to 5', setTo5)
 };
 
 const initialState: State = {
@@ -17,6 +18,13 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: Action): State {
   return createReducer(ducks)(state, action);
+}
+
+function setTo5(state: State): State {
+  return {
+    ...state,
+    count: 5
+  };
 }
 
 function increment(state: State, count: number): State {

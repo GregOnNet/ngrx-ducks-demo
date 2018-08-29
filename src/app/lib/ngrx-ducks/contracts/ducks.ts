@@ -1,5 +1,5 @@
 import { Duck } from './duck';
 
-export interface Ducks<TState, TPayload> {
-  [key: string]: Duck<TState, TPayload>;
+export interface Ducks<TState> {
+  [key: string]: Duck<TState, unknown>;
 }
