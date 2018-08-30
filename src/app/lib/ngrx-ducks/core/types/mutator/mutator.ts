@@ -1,4 +1,4 @@
-import { MethodTakingOneParameter } from '../method/method-taking-one-parameter.1';
+import { MethodTakingOneParameter } from '../method/method-taking-one-parameter';
 import { MethodTakingTwoParameters } from '../method/method-taking-two-parameters';
 import { PayloadOf } from '../method/payload-of';
 import { MutatorWithPayload } from '../mutator/mutator-with-payload';

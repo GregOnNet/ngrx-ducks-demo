@@ -1,6 +1,6 @@
-import { Ducks } from './types/ducks';
-import { DucksAction } from './contracts';
-import { Action } from './types/__internal__/action';
+import { Action } from './core/types/__internal__/action';
+import { ActionWithAnyPayload } from './core/types/__internal__/action-with-payload';
+import { Ducks } from './core/types/ducks';
 
 export type ReducerFn<T> = (state: T, action: Action) => T;
 
@@ -13,8 +13,7 @@ export function createReducer<TSlice>(ducks: Ducks<TSlice>): ReducerFn<TSlice> {
     {}
   );
 
-  // TODO: Not correctly typed DucksAction<unknown>
-  return (slice: TSlice, action: DucksAction<unknown>): TSlice =>
+  return (slice: TSlice, action: ActionWithAnyPayload): TSlice =>
     !!reducerFns[action.type]
       ? reducerFns[action.type](slice, action.payload)
       : slice;

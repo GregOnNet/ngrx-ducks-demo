@@ -1,9 +1,9 @@
-import { StoreWithDispatch } from '../../contracts';
 import { SelfDispatchingAction } from '../types/self-dispatching-action/self-dispatching-action';
+import { Store } from '../types/__internal__/store';
 
 export function createSelfDispatchingAction<TDuck>(
   duck: TDuck,
-  store: StoreWithDispatch
+  store: Store
 ): SelfDispatchingAction<TDuck> {
   const selfDispatchingAction: any = payload =>
     store.dispatch((duck as any)(payload));

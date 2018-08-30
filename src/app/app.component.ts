@@ -19,11 +19,10 @@ export class AppComponent {
   }
 
   increment() {
-    // this.babyActions.this.actions.counter.increment(this.count);
-    // console.log(this.actions.counter.increment.plain(this.count));
+    this.actions.counter.increment(this.count);
   }
 
   decrement() {
-    // this.actions.counter.decrement(this.count);
+    this.actions.counter.decrement(this.count);
   }
 }

@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
 
-export interface StoreWithDispatch {
+export interface Store {
   dispatch: (action: Action) => void;
 }

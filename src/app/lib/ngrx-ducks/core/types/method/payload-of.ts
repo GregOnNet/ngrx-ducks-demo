@@ -1,6 +1,6 @@
 export type PayloadOf<T> = T extends (
-  state: unknown,
+  state: any,
   payload: infer TPayload
-) => unknown
+) => any
   ? TPayload
   : never;

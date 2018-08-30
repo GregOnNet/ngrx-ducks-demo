@@ -1,2 +1,2 @@
 
-export type MethodTakingTwoParameters = (a: unknown, b: unknown) => unknown;
+export type MethodTakingTwoParameters = (a: any, b: any) => any;

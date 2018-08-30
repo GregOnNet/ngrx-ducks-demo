@@ -1,10 +1,10 @@
-import { StoreWithDispatch } from '../../contracts';
+import { Store } from '../types/__internal__/store';
 import { SelfDispatchingActions } from '../types/self-dispatching-action/self-dispatching-actions';
 import { createSelfDispatchingAction } from './create-self-dispatching-action';
 
 export function createSelfDispatchingActions<TDuck>(
   ducks: TDuck,
-  store: StoreWithDispatch
+  store: Store
 ): SelfDispatchingActions<TDuck> {
   return Object.entries(ducks).reduce(
     (dispatchers: SelfDispatchingActions<TDuck>, [key, duck]) => {
