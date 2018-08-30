@@ -17,7 +17,7 @@ const initialState: State = {
 };
 
 export function reducer(state = initialState, action: Action): State {
-  return createReducer(ducks)(state, action);
+  return createReducer<State>(ducks)(state, action);
 }
 
 function setTo5(state: State): State {

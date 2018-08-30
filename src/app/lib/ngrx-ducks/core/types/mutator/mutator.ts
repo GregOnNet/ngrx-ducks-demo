@@ -8,8 +8,8 @@ import { MutatorWithoutPayload } from '../mutator/mutator-without-payload';
  * Lesart:
  * - Wen Fn dem Typ MethodTakingOneParameter entspricht, dann wird der Typ StatMutator<ReturnType<Fn>> erzeugt
  */
-export type Mutator<Fn> = Fn extends MethodTakingOneParameter
-  ? MutatorWithoutPayload<ReturnType<Fn>>
-  : Fn extends MethodTakingTwoParameters
-    ? MutatorWithPayload<ReturnType<Fn>, PayloadOf<Fn>>
+export type Mutator<Fn> = Fn extends MethodTakingTwoParameters
+  ? MutatorWithPayload<ReturnType<Fn>, PayloadOf<Fn>>
+  : Fn extends MethodTakingOneParameter
+    ? MutatorWithoutPayload<ReturnType<Fn>>
     : Function;

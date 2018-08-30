@@ -1,4 +1,4 @@
-import { Duck } from './types/duck';
+import { Duck } from './core/types/duck';
 
 export function createDuck<T>(type: string, caseReducer: T): Duck<T> {
   const duck: any = payload => ({
