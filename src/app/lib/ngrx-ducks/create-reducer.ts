@@ -1,17 +1,19 @@
-import { Ducks, DucksAction } from './contracts';
+import { Ducks } from './types/ducks';
+import { DucksAction } from './contracts';
 
-export function createReducer<TSlice, TPayload>(
+export function createReducer<TSlice>(
   ducks: Ducks<TSlice>
 ) {
   const reducerFns = Object.values(ducks).reduce(
     (functions, duck) => ({
       ...functions,
-      [duck.type]: duck.mutator
+      [duck.type]: duck.caseReducer
     }),
     {}
   );
 
-  return (slice: TSlice, action: DucksAction<TPayload>) =>
+  // TODO: Not correctly typed DucksAction<unknown>
+  return (slice: TSlice, action: DucksAction<unknown>) =>
     !!reducerFns[action.type]
       ? reducerFns[action.type](slice, action.payload)
       : slice;

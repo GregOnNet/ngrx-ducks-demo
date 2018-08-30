@@ -12,4 +12,4 @@ export type Mutator<Fn> = Fn extends MethodTakingOneParameter
   ? MutatorWithoutPayload<ReturnType<Fn>>
   : Fn extends MethodTakingTwoParameters
     ? MutatorWithPayload<ReturnType<Fn>, PayloadOf<Fn>>
-    : never;
+    : Function;

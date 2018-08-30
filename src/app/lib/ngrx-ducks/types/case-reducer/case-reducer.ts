@@ -7,4 +7,4 @@ export type CaseReducer<Fn> = Fn extends MethodTakingOneParameter
   ? CaseReducerWithoutAction<ReturnType<Fn>>
   : Fn extends MethodTakingTwoParameters
     ? CaseReducerWithAction<ReturnType<Fn>>
-    : never;
+    : Function;

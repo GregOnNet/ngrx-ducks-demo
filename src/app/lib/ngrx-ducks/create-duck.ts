@@ -1,16 +1,13 @@
-import { Duck, Mutator } from './contracts';
+import { Duck } from './types/duck';
 
-export function createDuck<TSlice, TPayload>(
-  type: string,
-  mutator: Mutator<TSlice, TPayload>
-): Duck<TSlice, TPayload> {
-  const duck: any = (payload: TPayload) => ({
+export function createDuck<T>(type: string, caseReducer: T): Duck<T> {
+  const duck: any = payload => ({
     type,
     payload
   });
 
   duck.type = type;
-  duck.mutator = mutator;
+  duck.caseReducer = caseReducer;
 
   return duck;
 }
