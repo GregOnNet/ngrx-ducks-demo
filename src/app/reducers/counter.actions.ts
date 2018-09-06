@@ -1,13 +1,28 @@
-import { Injectable } from '@angular/core';
+import { wireUpActions } from '@co-it/ngrx-ducks';
 
-import { DucksDispatchers } from '../lib/ngrx-ducks';
-import { ducks } from './counter.reducer';
+interface State {
+  count: number;
+}
 
-@Injectable({ providedIn: 'root' })
-export class CounterActions {
-  readonly LoadAll = 'Counter Load All';
+export class Counter {
+  readonly LoadAll = '[Counter] Load All With Ducks';
 
-  counter = this.dispatchers.create(ducks);
+  set(_state: State, payload: number): State {
+    return {
+      count: payload
+    };
+  }
 
-  constructor(private dispatchers: DucksDispatchers) {}
+  increment(_state: State, payload: number): State {
+    return {
+      count: _state.count + payload
+    };
+  }
+}
+
+export function counterActions() {
+  return wireUpActions(Counter, {
+    set: '[Counter] Set with Ducks',
+    increment: '[Counter] Increment with Ducks'
+  });
 }

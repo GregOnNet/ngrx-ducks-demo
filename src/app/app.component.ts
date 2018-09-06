@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { Ducks } from '@co-it/ngrx-ducks/lib/core/types';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { CounterActions } from './reducers/counter.actions';
+import { Counter } from './reducers/counter.actions';
 
 @Component({
   selector: 'app-root',
@@ -13,16 +14,20 @@ export class AppComponent {
   count$: Observable<number>;
   count: number;
 
-  constructor(private _store: Store<any>, private actions: CounterActions) {
+  constructor(
+    private _store: Store<any>,
+    @Inject(Counter) private counter: Ducks<Counter>
+  ) {
+    this._store.dispatch({ type: this.counter.LoadAll });
     this.count$ = this._store.pipe(select(state => state.counter.count));
     this.count$.subscribe(count => (this.count = count));
   }
 
   increment() {
-    this.actions.counter.increment(this.count);
+    this.counter.increment(1000);
   }
 
   decrement() {
-    this.actions.counter.decrement(this.count);
+    this.counter.set(2000);
   }
 }
