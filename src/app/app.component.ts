@@ -8,7 +8,7 @@ import { Counter } from './reducers/counter.actions';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>Counter</h1>
+    <h1>Counter <small>{{ isLoading$ | async }}</small></h1>
 
     <p><strong>Value</strong> {{ count$ | async }}</p>
 
@@ -17,6 +17,7 @@ import { Counter } from './reducers/counter.actions';
   `
 })
 export class AppComponent {
+  isLoading$: Observable<boolean>;
   count$: Observable<number>;
 
   constructor(
@@ -26,6 +27,9 @@ export class AppComponent {
     this.counter.loadAll.dispatch();
 
     this.count$ = this._store.pipe(select(state => state.counter.count));
+    this.isLoading$ = this._store.pipe(
+      select(state => state.counter.isLoading)
+    );
   }
 
   increment() {

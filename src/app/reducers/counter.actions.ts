@@ -1,33 +1,42 @@
 import { wireUpActions } from '@co-it/ngrx-ducks';
-
-interface State {
-  count: number;
-}
+import { CounterSlice } from './counter.state';
 
 export class Counter {
   readonly loadAll = '[Counter] Load All With Ducks';
 
-  set(_state: State, payload: number): State {
+  set(state: CounterSlice, payload: number): CounterSlice {
     return {
-      count: payload
+      ...state,
+      count: payload,
+      isLoading: false
     };
   }
 
-  increment(_state: State, payload: number): State {
+  increment(state: CounterSlice, payload: number): CounterSlice {
     return {
-      count: _state.count + payload
+      ...state,
+      count: state.count + payload
     };
   }
 
-  decrement(_state: State, payload: number): State {
+  decrement(state: CounterSlice, payload: number): CounterSlice {
     return {
-      count: _state.count - payload
+      ...state,
+      count: state.count - payload
     };
   }
 
-  bahu(_state: State, _payload: string): State {
+  bahu(state: CounterSlice, _payload: string): CounterSlice {
     return {
-      count: _state.count - 0
+      ...state,
+      count: state.count - 0
+    };
+  }
+
+  initialize(state: CounterSlice): CounterSlice {
+    return {
+      ...state,
+      isLoading: true
     };
   }
 }
@@ -36,5 +45,6 @@ export const counterActions = wireUpActions(Counter, {
   set: '[Counter] Set with Ducks',
   increment: '[Counter] Increment with Ducks',
   decrement: '[Counter] Decrement with Ducks',
-  bahu: '[Counter] Bahu with Ducks'
+  bahu: '[Counter] Bahu with Ducks',
+  initialize: '[Counter] Load All With Ducks'
 });
