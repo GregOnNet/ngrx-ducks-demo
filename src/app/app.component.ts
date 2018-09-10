@@ -2,25 +2,30 @@ import { Component, Inject } from '@angular/core';
 import { Ducks } from '@co-it/ngrx-ducks/lib/core/types';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-
+import { State } from './reducers';
 import { Counter } from './reducers/counter.actions';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <h1>Counter</h1>
+
+    <p><strong>Value</strong> {{ count$ | async }}</p>
+
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+  `
 })
 export class AppComponent {
   count$: Observable<number>;
-  count: number;
 
   constructor(
-    private _store: Store<any>,
+    private _store: Store<State>,
     @Inject(Counter) private counter: Ducks<Counter>
   ) {
-    this._store.dispatch({ type: this.counter.LoadAll });
+    this.counter.loadAll.dispatch();
+
     this.count$ = this._store.pipe(select(state => state.counter.count));
-    this.count$.subscribe(count => (this.count = count));
   }
 
   increment() {
@@ -28,6 +33,6 @@ export class AppComponent {
   }
 
   decrement() {
-    this.counter.set(2000);
+    this.counter.decrement(1000);
   }
 }

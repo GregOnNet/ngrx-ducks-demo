@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DucksModule } from '@co-it/ngrx-ducks';
+import { createDucks } from '@co-it/ngrx-ducks';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { FeatureAModule } from './feature-a/feature-a.module';
@@ -19,11 +18,18 @@ import { CounterEffects } from './reducers/counter.effects';
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([CounterEffects]),
 
-    DucksModule.register([{ duck: Counter, use: counterActions }]),
-
     FeatureAModule,
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: Counter,
+      useFactory: function(store) {
+        return createDucks(counterActions, store);
+      },
+      deps: [Store]
+    }
+  ]
 })
-export class AppModule { }
+export class AppModule {}

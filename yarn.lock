@@ -179,6 +179,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@co-it/ngrx-ducks@../../../projects/coit/@co-it/ngrx/ducks/dist":
+  version "1.0.0"
+  dependencies:
+    "@types/jest" "^23.3.1"
+    tslib "^1.9.0"
+
 "@ngrx/effects@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-6.1.0.tgz#3c1e1ab1e5a86c6d9c29d4f3771e42cc9bd8576c"
@@ -236,6 +242,10 @@
   resolved "https://registry.yarnpkg.com/@types/jasminewd2/-/jasminewd2-2.0.3.tgz#0d2886b0cbdae4c0eeba55e30792f584bf040a95"
   dependencies:
     "@types/jasmine" "*"
+
+"@types/jest@^23.3.1":
+  version "23.3.2"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.2.tgz#07b90f6adf75d42c34230c026a2529e56c249dbb"
 
 "@types/node@^6.0.46":
   version "6.0.116"
