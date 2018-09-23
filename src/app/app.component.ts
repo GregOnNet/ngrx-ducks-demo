@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { Ducks } from '@co-it/ngrx-ducks/lib/core/types';
+import { Ducks } from '@co-it/ngrx-ducks';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { State } from './reducers';
