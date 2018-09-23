@@ -179,11 +179,16 @@
   dependencies:
     tslib "^1.9.0"
 
-"@co-it/ngrx-ducks@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-0.2.0-alpha.0.tgz#b805d3387b6397ebfc940064d20f05f4c2f2bf1d"
+"@co-it/ngrx-ducks@^0.3.0-alpha.0":
+  version "0.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-0.3.0-alpha.0.tgz#d02a041fc63844377c479bf4e69159200562b78a"
   dependencies:
     "@types/jest" "^23.3.1"
+    tslib "^1.9.0"
+
+"@kentan-official/core@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@kentan-official/core/-/core-2.0.5.tgz#b282fcec510b5448d06141125a9bc47c339c07df"
 
 "@ngrx/effects@^6.1.0":
   version "6.1.0"
