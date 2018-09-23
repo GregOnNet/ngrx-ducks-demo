@@ -179,11 +179,11 @@
   dependencies:
     tslib "^1.9.0"
 
-"@co-it/ngrx-ducks@../../../projects/coit/@co-it/ngrx/ducks/dist":
-  version "1.0.0"
+"@co-it/ngrx-ducks@^0.1.0-alpha.0":
+  version "0.1.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-0.1.0-alpha.0.tgz#a72c0237f61ad214152fd84a6bdfadad0087cb80"
   dependencies:
     "@types/jest" "^23.3.1"
-    tslib "^1.9.0"
 
 "@ngrx/effects@^6.1.0":
   version "6.1.0"
