@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { Ducks } from '@co-it/ngrx-ducks/lib/core/types';
+import { Ducks } from '@co-it/ngrx-ducks';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { map } from 'rxjs/operators';
 import { Counter } from './counter.actions';
