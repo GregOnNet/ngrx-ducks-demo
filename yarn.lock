@@ -180,11 +180,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@co-it/ngrx-ducks@^0.3.0-alpha.0":
-  version "0.3.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-0.3.0-alpha.0.tgz#d02a041fc63844377c479bf4e69159200562b78a"
+"@co-it/ngrx-ducks@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-0.3.0.tgz#11f67e94ec7f7142d0c20658ed6accfa87bd9990"
   dependencies:
-    "@types/jest" "^23.3.1"
     tslib "^1.9.0"
 
 "@kentan-official/core@^2.0.5":
@@ -248,10 +247,6 @@
   resolved "https://registry.yarnpkg.com/@types/jasminewd2/-/jasminewd2-2.0.3.tgz#0d2886b0cbdae4c0eeba55e30792f584bf040a95"
   dependencies:
     "@types/jasmine" "*"
-
-"@types/jest@^23.3.1":
-  version "23.3.2"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.2.tgz#07b90f6adf75d42c34230c026a2529e56c249dbb"
 
 "@types/node@^6.0.46":
   version "6.0.116"
