@@ -180,9 +180,9 @@
   dependencies:
     tslib "^1.9.0"
 
-"@co-it/ngrx-ducks@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-0.3.1.tgz#708b6a117f209590baf37c72794b3d6b25f3d541"
+"@co-it/ngrx-ducks@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-0.3.2.tgz#ebe177393f6e6f9013766c5b9d027469d5529378"
   dependencies:
     tslib "^1.9.0"
 
