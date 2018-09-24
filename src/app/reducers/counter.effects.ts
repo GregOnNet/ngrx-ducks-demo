@@ -14,6 +14,15 @@ export class CounterEffects {
     })
   );
 
+
+  @Effect()
+  delayedCounterSet = this.actions$.pipe(
+    ofType(this.counter.loadAll.type),
+    map(() => {
+      return this.counter.set.plain(100000);
+    })
+  );
+
   constructor(
     private actions$: Actions,
     @Inject(Counter) private counter: Ducks<Counter>
