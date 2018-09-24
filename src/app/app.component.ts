@@ -25,6 +25,7 @@ export class AppComponent {
     @Inject(Counter) private counter: Ducks<Counter>
   ) {
     this.counter.loadAll.dispatch();
+    this.counter.delayedCounterSet.dispatch(-4000);
 
     this.count$ = this._store.pipe(select(state => state.counter.count));
     this.isLoading$ = this._store.pipe(

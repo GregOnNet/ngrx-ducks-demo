@@ -1,9 +1,9 @@
-import { wireUpActions } from '@co-it/ngrx-ducks';
+import { wireUpActions, effect } from '@co-it/ngrx-ducks';
 import { CounterSlice } from './counter.state';
 
 export class Counter {
   readonly loadAll = effect('[Counter] Load All With Ducks');
-  readonly delayedCounterSet = effect('[Counter] Set counter after a while');
+  readonly delayedCounterSet = effect<number>('[Counter] Set counter after a while');
 
   set(state: CounterSlice, payload: number): CounterSlice {
     return {
