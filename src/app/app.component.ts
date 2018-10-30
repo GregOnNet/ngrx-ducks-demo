@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { State } from './reducers';
 import { Counter } from './reducers/counter.actions';
 
+import * as fromCounter from './reducers/counter.selectors';
+
 @Component({
   selector: 'app-root',
   template: `
@@ -20,17 +22,12 @@ export class AppComponent {
   isLoading$: Observable<boolean>;
   count$: Observable<number>;
 
-  constructor(
-    private _store: Store<State>,
-    @Inject(Counter) private counter: Ducks<Counter>
-  ) {
+  constructor(@Inject(Counter) private counter: Ducks<Counter>) {
     this.counter.loadAll.dispatch();
     this.counter.delayedCounterSet.dispatch(-4000);
 
-    this.count$ = this._store.pipe(select(state => state.counter.count));
-    this.isLoading$ = this._store.pipe(
-      select(state => state.counter.isLoading)
-    );
+    this.count$ = this.counter.pick(fromCounter.currentCount);
+    this.isLoading$ = this.counter.pick(fromCounter.isLoading);
   }
 
   increment() {
