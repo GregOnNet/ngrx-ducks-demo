@@ -2,8 +2,8 @@ import { Inject, Injectable } from '@angular/core';
 import { DuckService } from '@co-it/ngrx-ducks';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { debounceTime, map } from 'rxjs/operators';
-import { ActionOf } from '../lib';
-import { Counter } from './counter.actions';
+import { ActionOf } from '../../lib';
+import { Counter } from './counter.duck';
 
 @Injectable()
 export class CounterEffects {

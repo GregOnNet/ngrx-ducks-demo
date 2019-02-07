@@ -2,9 +2,9 @@ import { Component, Inject } from '@angular/core';
 import { DuckService } from '@co-it/ngrx-ducks';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { State } from './reducers';
-import { Counter } from './reducers/counter.actions';
-import * as fromCounter from './reducers/counter.selectors';
+import { State } from './store';
+import * as fromCounter from './store/counter';
+import { Counter } from './store/counter/counter.duck';
 
 @Component({
   selector: 'app-root',
