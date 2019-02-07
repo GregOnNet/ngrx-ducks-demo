@@ -202,10 +202,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@co-it/ngrx-ducks@^7.3.0-alpha.0":
-  version "7.3.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-7.3.0-alpha.0.tgz#78d7cd6c31f1a4497b67009ebadb8641c55f3cea"
-  integrity sha512-RpNFCsWLP7dcjh/xd10nhIwzoP7FJegxHcOL9cck15t2aauPlKolpIGzzVVi6x9ftvUumeYOpRYh+Fj+HQDzfg==
+"@co-it/ngrx-ducks@^7.3.1-alpha.2":
+  version "7.3.1-alpha.2"
+  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-7.3.1-alpha.2.tgz#71ad4a8aa14e6ae627219b3ed7f249d92cd74a93"
+  integrity sha512-fMSNYRdQ29ZRoOaBAlib/eMJ1ijOe75xQALYE63irz/Gn0FiO0WpQIb0RvkT6JLpS1tuHGx/n4QvomUUjBiCRw==
   dependencies:
     tslib "^1.9.0"
 

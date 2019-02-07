@@ -1,10 +1,18 @@
-import { wireUpActions, effect } from '@co-it/ngrx-ducks';
+import { Action, effect, InitialState } from '@co-it/ngrx-ducks';
 import { CounterSlice } from './counter.state';
 
+// TODO: Correct Typing of InitialState Decorator
+@InitialState({
+  count: 0,
+  isLoading: false
+})
 export class Counter {
   readonly loadAll = effect('[Counter] Load All With Ducks');
-  readonly delayedCounterSet = effect<number>('[Counter] Set counter after a while');
+  readonly delayedCounterSet = effect<number>(
+    '[Counter] Set counter after a while'
+  );
 
+  @Action('[Counter] Set with Ducks')
   set(state: CounterSlice, payload: number): CounterSlice {
     return {
       ...state,
@@ -13,6 +21,7 @@ export class Counter {
     };
   }
 
+  @Action('[Counter] Increment with Ducks')
   increment(state: CounterSlice, payload: number): CounterSlice {
     return {
       ...state,
@@ -20,6 +29,7 @@ export class Counter {
     };
   }
 
+  @Action('[Counter] Decrement with Ducks')
   decrement(state: CounterSlice, payload: number): CounterSlice {
     return {
       ...state,
@@ -27,6 +37,7 @@ export class Counter {
     };
   }
 
+  @Action('[Counter] Bahu with Ducks')
   bahu(state: CounterSlice, _payload: string): CounterSlice {
     return {
       ...state,
@@ -34,6 +45,7 @@ export class Counter {
     };
   }
 
+  @Action('[Counter] Load All With Ducks')
   initialize(state: CounterSlice): CounterSlice {
     return {
       ...state,
@@ -41,11 +53,3 @@ export class Counter {
     };
   }
 }
-
-export const counterActions = wireUpActions(Counter, {
-  set: '[Counter] Set with Ducks',
-  increment: '[Counter] Increment with Ducks',
-  decrement: '[Counter] Decrement with Ducks',
-  bahu: '[Counter] Bahu with Ducks',
-  initialize: '[Counter] Load All With Ducks'
-});
