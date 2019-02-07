@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { DuckService } from '@co-it/ngrx-ducks';
+import { Duck } from '@co-it/ngrx-ducks';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { debounceTime, map } from 'rxjs/operators';
 import { ActionOf } from '../../lib';
@@ -26,6 +26,6 @@ export class CounterEffects {
 
   constructor(
     private actions$: Actions,
-    @Inject(Counter) private counter: DuckService<Counter>
+    @Inject(Counter) private counter: Duck<Counter>
   ) {}
 }

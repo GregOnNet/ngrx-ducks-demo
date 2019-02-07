@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { DuckService } from '@co-it/ngrx-ducks';
+import { Duck } from '@co-it/ngrx-ducks';
 import { Observable } from 'rxjs';
 import * as fromCounter from './store/counter';
 import { Counter } from './store/counter/counter.duck';
@@ -21,7 +21,7 @@ export class AppComponent {
   isLoading$: Observable<boolean>;
   count$: Observable<number>;
 
-  constructor(@Inject(Counter) private counter: DuckService<Counter>) {
+  constructor(@Inject(Counter) private counter: Duck<Counter>) {
     this.counter.loadAll.dispatch();
     this.counter.delayedCounterSet.dispatch(-4000);
     this.count$ = this.counter.pick(fromCounter.currentCount);
