@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ServiceService } from './service.service';
 
@@ -8,7 +8,7 @@ import { ServiceService } from './service.service';
   providers: [
     {
       provide: ServiceService,
-      useFactory(store) {
+      useFactory(store: Store<unknown>) {
         return new ServiceService(store);
       },
       deps: [Store]
