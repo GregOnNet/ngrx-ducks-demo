@@ -12,10 +12,10 @@ export const registerCounter = {
 export function createCounterService(store: Store<unknown>) {
   return createDuckService(Counter, store);
 }
+
 export function reducer(
   state: CounterSlice | undefined,
   action: Action
 ): CounterSlice {
-  // TODO: Refine types for reducerFrom
-  return reducerFrom(Counter)(state, action) as any;
+  return reducerFrom(Counter)(state, action);
 }
