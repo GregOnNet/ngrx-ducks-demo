@@ -1,8 +1,7 @@
 import { Action, effect, InitialState } from '@co-it/ngrx-ducks';
 import { CounterSlice } from './counter.state';
 
-// TODO: Correct Typing of InitialState Decorator
-@InitialState({
+@InitialState<CounterSlice>({
   count: 0,
   isLoading: false
 })
