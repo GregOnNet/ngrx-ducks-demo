@@ -1,7 +1,7 @@
 import { Action, effect, InitialState } from '@co-it/ngrx-ducks';
-import { CounterSlice } from './counter.state';
+import { CounterState } from './counter.state';
 
-@InitialState<CounterSlice>({
+@InitialState<CounterState>({
   count: 0,
   isLoading: false
 })
@@ -12,7 +12,7 @@ export class Counter {
   );
 
   @Action('[Counter] Set with Ducks')
-  set(state: CounterSlice, payload: number): CounterSlice {
+  set(state: CounterState, payload: number): CounterState {
     return {
       ...state,
       count: payload,
@@ -21,7 +21,7 @@ export class Counter {
   }
 
   @Action('[Counter] Increment with Ducks')
-  increment(state: CounterSlice, payload: number): CounterSlice {
+  increment(state: CounterState, payload: number): CounterState {
     return {
       ...state,
       count: state.count + payload
@@ -29,7 +29,7 @@ export class Counter {
   }
 
   @Action('[Counter] Decrement with Ducks')
-  decrement(state: CounterSlice, payload: number): CounterSlice {
+  decrement(state: CounterState, payload: number): CounterState {
     return {
       ...state,
       count: state.count - payload
@@ -37,7 +37,7 @@ export class Counter {
   }
 
   @Action('[Counter] Bahu with Ducks')
-  bahu(state: CounterSlice, _payload: string): CounterSlice {
+  bahu(state: CounterState, _payload: string): CounterState {
     return {
       ...state,
       count: state.count - 0
@@ -45,7 +45,7 @@ export class Counter {
   }
 
   @Action('[Counter] Load All With Ducks')
-  initialize(state: CounterSlice): CounterSlice {
+  initialize(state: CounterState): CounterState {
     return {
       ...state,
       isLoading: true

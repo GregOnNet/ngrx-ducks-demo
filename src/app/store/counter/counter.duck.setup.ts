@@ -1,7 +1,7 @@
 import { ducksify, reducerFrom } from '@co-it/ngrx-ducks';
 import { Action, Store } from '@ngrx/store';
 import { Counter } from './counter.duck';
-import { CounterSlice } from './counter.state';
+import { CounterState } from './counter.state';
 
 export const registerCounter = {
   provide: Counter,
@@ -14,8 +14,8 @@ export function createCounterService(store: Store<unknown>) {
 }
 
 export function reducer(
-  state: CounterSlice | undefined,
+  state: CounterState | undefined,
   action: Action
-): CounterSlice {
+): CounterState {
   return reducerFrom(Counter)(state, action);
 }

@@ -1,9 +1,9 @@
 import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { environment } from '../../environments/environment';
-import { CounterSlice, reducer } from './counter';
+import { CounterState, reducer } from './counter';
 
 export interface State {
-  counter: CounterSlice;
+  counter: CounterState;
 }
 
 export const reducers: ActionReducerMap<State> = {

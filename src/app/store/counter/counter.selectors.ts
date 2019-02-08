@@ -1,7 +1,13 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { CounterSlice } from './counter.state';
+import { CounterState } from './counter.state';
 
-const visitCounter = createFeatureSelector<CounterSlice>('counter');
+const visitCounter = createFeatureSelector<CounterState>('counter');
 
-export const currentCount = createSelector(visitCounter, c => c.count);
-export const isLoading = createSelector(visitCounter, c => c.isLoading);
+export const currentCount = createSelector(
+  visitCounter,
+  c => c.count
+);
+export const isLoading = createSelector(
+  visitCounter,
+  c => c.isLoading
+);
