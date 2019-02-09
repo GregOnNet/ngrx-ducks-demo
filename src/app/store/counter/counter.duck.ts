@@ -3,24 +3,12 @@ import { CounterState } from './counter.state';
 
 @InitialState<CounterState>({
   count: 0,
-  isLoading: false
+  isLoading: true
 })
 export class Counter {
-  readonly loadAll = effect('[Counter] Load All With Ducks');
-  readonly delayedCounterSet = effect<number>(
-    '[Counter] Set counter after a while'
-  );
+  readonly set = effect<number>('[Counter] Load Count');
 
-  @Action('[Counter] Set with Ducks')
-  set(state: CounterState, payload: number): CounterState {
-    return {
-      ...state,
-      count: payload,
-      isLoading: false
-    };
-  }
-
-  @Action('[Counter] Increment with Ducks')
+  @Action('[Counter] Increment value')
   increment(state: CounterState, payload: number): CounterState {
     return {
       ...state,
@@ -28,7 +16,7 @@ export class Counter {
     };
   }
 
-  @Action('[Counter] Decrement with Ducks')
+  @Action('[Counter] Decrement value')
   decrement(state: CounterState, payload: number): CounterState {
     return {
       ...state,
@@ -36,19 +24,12 @@ export class Counter {
     };
   }
 
-  @Action('[Counter] Bahu with Ducks')
-  bahu(state: CounterState, _payload: string): CounterState {
+  @Action('[Counter] Set value')
+  override(state: CounterState, payload: number): CounterState {
     return {
       ...state,
-      count: state.count - 0
-    };
-  }
-
-  @Action('[Counter] Load All With Ducks')
-  initialize(state: CounterState): CounterState {
-    return {
-      ...state,
-      isLoading: true
+      count: payload,
+      isLoading: false
     };
   }
 }
