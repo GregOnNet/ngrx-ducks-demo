@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^7.2.4",
     "@angular/platform-browser-dynamic": "^7.2.4",
     "@angular/router": "^7.2.4",
-    "@co-it/ngrx-ducks": "^7.3.1-beta.0",
+    "@co-it/ngrx-ducks": "^7.3.1-beta.1",
     "@ngrx/effects": "^7.1.0",
     "@ngrx/entity": "^7.1.0",
     "@ngrx/schematics": "^7.1.0",
