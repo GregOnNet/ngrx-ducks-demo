@@ -4,7 +4,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
-import { FeatureAModule } from './feature-a/feature-a.module';
 import { metaReducers, reducers } from './store';
 import { registerCounter } from './store/counter';
 import { CounterEffects } from './store/counter/counter.effects';
@@ -15,8 +14,6 @@ import { CounterEffects } from './store/counter/counter.effects';
     BrowserModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([CounterEffects]),
-
-    FeatureAModule,
     StoreDevtoolsModule.instrument()
   ],
   bootstrap: [AppComponent],
