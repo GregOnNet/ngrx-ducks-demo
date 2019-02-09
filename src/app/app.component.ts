@@ -9,15 +9,19 @@ import { Counter } from './store/counter/counter.duck';
   template: `
     <h1>Counter</h1>
 
-    <p [hidden]="(isLoading$ | async) == false">
-      Initializing Counter...
-    </p>
+    <div class="counter">
+      <div class="count">{{ count$ | async }}</div>
+      <div class="counter-actions">
+        <button (click)="increment()">Increment</button>
+        <button (click)="decrement()">Decrement</button>
+      </div>
+    </div>
 
-    <p>{{ count$ | async }}</p>
-
-    <button (click)="increment()">Increment</button>
-    <button (click)="decrement()">Decrement</button>
-  `
+    <div class="progress" [hidden]="(isLoading$ | async) == false">
+      Initializing...
+    </div>
+  `,
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   isLoading$: Observable<boolean>;
