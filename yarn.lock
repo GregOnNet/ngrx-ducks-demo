@@ -92,12 +92,31 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
+"@angular-devkit/core@7.3.4", "@angular-devkit/core@^7.3.1":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.4.tgz#fae0521652c7430237025f117531ca3262ef8335"
+  integrity sha512-MBfen51iOBKfK4tlg5KwmPxePsF1QoFNUMGLuvUUwPkteonrGcupX1Q7NWTpf+HA+i08mOnZGuepeuQkD12IQw==
+  dependencies:
+    ajv "6.9.1"
+    chokidar "2.0.4"
+    fast-json-stable-stringify "2.0.0"
+    rxjs "6.3.3"
+    source-map "0.7.3"
+
 "@angular-devkit/schematics@7.3.1":
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.3.1.tgz#7dc704005b966ea6c1ee62f380120183bb76eee6"
   integrity sha512-cd7usiasfSgw75INz72/VssrLr9tiVRYfo1TEdvr9ww0GuQbuQpB33xbV8W135eAV8+wzQ3Ce8ohaDHibvj6Yg==
   dependencies:
     "@angular-devkit/core" "7.3.1"
+    rxjs "6.3.3"
+
+"@angular-devkit/schematics@^7.3.1":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.3.4.tgz#918c9349835f3a4c9a7128ebcda0738b623fc89e"
+  integrity sha512-BLI4MDHmpzw+snu/2Dw1nMmfJ0VAARTbU6DrmzXyl2Se45+iE/tdRy4yNx3IfHhyoCrVZ15R0y9CXeEsLftlIg==
+  dependencies:
+    "@angular-devkit/core" "7.3.4"
     rxjs "6.3.3"
 
 "@angular/animations@^7.2.4":
@@ -204,11 +223,21 @@
   dependencies:
     tslib "^1.9.0"
 
-"@co-it/ngrx-ducks@^7.5.1":
-  version "7.5.1"
-  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-7.5.1.tgz#0dadbc063c3f41cd2eefe5319bcd7adff1a5c422"
-  integrity sha512-gTlhVPKRjOKLynXzCclFV+tsETG4z3szVvi1Gh/xY6EaWZsqMehn1toEC/k5t0B40BZvC4nZJJFFuOcV/lDxEQ==
+"@co-it/ngrx-ducks-schematics@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks-schematics/-/ngrx-ducks-schematics-7.6.0.tgz#3c692a2ebb7b5a4a720fe907ce71060712d79bb9"
+  integrity sha512-x9UYvvBhk7oKdi0VCFFdBxTlOpYCbWlocNHal/uF0OmYtB1/SSIOc/Z58zJcuZxyHafxdnXfNoEKqN8AJqq2Og==
   dependencies:
+    "@angular-devkit/core" "^7.3.1"
+    "@angular-devkit/schematics" "^7.3.1"
+    typescript "~3.2.2"
+
+"@co-it/ngrx-ducks@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@co-it/ngrx-ducks/-/ngrx-ducks-7.6.0.tgz#0955f58480d41af64e451a1ad4163404c8b60882"
+  integrity sha512-gjGHx0wUdLhkr0YOKw7Z4ZZL0uC0RP8eu5LqYax7eTpkAH8xnN1OntmXKlS6MI7enH2SNRwrk4fZ2oHo8PgZ4w==
+  dependencies:
+    "@co-it/ngrx-ducks-schematics" "^7.6.0"
     tslib "^1.9.0"
 
 "@kentan-official/core@^2.0.5":
@@ -544,6 +573,16 @@ ajv@6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.7.0.tgz#e3ce7bb372d6577bb1839f1dfdfcbf5ad2948d96"
   integrity sha512-RZXPviBTtfmtka9n9sy1N5M5b82CbxWIR6HIis4s3WQTXDJamc/0gpCWNGz6EWdWp4DOfjzJfhz/AS9zVPjjWg==
+  dependencies:
+    fast-deep-equal "^2.0.1"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
+
+ajv@6.9.1:
+  version "6.9.1"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.9.1.tgz#a4d3683d74abc5670e75f0b16520f70a20ea8dc1"
+  integrity sha512-XDN92U311aINL77ieWHmqCcNlwjoP5cHXDxIxbf2MaPYuCXOHS7gHH8jktxeK5omgd52XbSTX6a4Piwd1pQmzA==
   dependencies:
     fast-deep-equal "^2.0.1"
     fast-json-stable-stringify "^2.0.0"
@@ -6403,7 +6442,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@3.2.4:
+typescript@3.2.4, typescript@~3.2.2:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.4.tgz#c585cb952912263d915b462726ce244ba510ef3d"
   integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
