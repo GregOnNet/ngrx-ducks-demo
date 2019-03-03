@@ -1,9 +1,14 @@
-import { Action, effect, InitialState } from '@co-it/ngrx-ducks';
+import {
+  Action,
+  DucksifiedAction,
+  Ducksify,
+  effect,
+  reducerFrom
+} from '@co-it/ngrx-ducks';
 import { CounterState } from './counter.state';
 
-@InitialState<CounterState>({
-  count: 0,
-  isLoading: true
+@Ducksify<CounterState>({
+  initialState: { count: 0, isLoading: true }
 })
 export class Counter {
   readonly set = effect<number>('[Counter] Load Count');
@@ -32,4 +37,11 @@ export class Counter {
       isLoading: false
     };
   }
+}
+
+export function reducer(
+  state: CounterState | undefined,
+  action: DucksifiedAction
+): CounterState {
+  return reducerFrom(Counter)(state, action);
 }
