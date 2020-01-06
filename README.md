@@ -1,6 +1,9 @@
 # NgrxDucksDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+⚠️ This project uses an outdated version of ngrx-ducks
+You will find the next version at https://stackblitz.com/edit/ngrx-ducks-8-4?file=src%2Fapp%2Fcounter%2Fstore%2Fcounter%2Fcounter.facade.ts
+
+---
 
 ## Development server
 
